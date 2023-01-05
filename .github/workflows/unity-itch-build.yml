@@ -1,0 +1,48 @@
+name: Build Game For Unity
+on: 
+  push:
+  workflow_dispatch:
+jobs:
+  build-game:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - targetPlatform: WebGL
+            channel: webgl-beta
+          - targetPlatform: StandaloneWindows64
+            channel: win64-beta
+          - targetPlatform: StandaloneOSX
+            channel: osx-beta
+    steps:
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          lfs: true
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-${{ matrix.targetPlatform }}
+          restore-keys: Library-
+      - uses: game-ci/unity-builder@v2
+        id: unityBuild
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: ${{ matrix.targetPlatform }}
+      - name: Publish game to itch.io
+        run: |
+          butler push build tobiusthegrand/bananabuffalo:${{ matrix.channel }} --userversion ${{ steps.unityBuild.outputs.buildVersion }}
+        env:
+          BUTLER_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
+      - name: Discord notification
+        if: ${{ success() && matrix.targetPlatform == 'WebGL' }}
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@0.3.2
+        with:
+          args: 'Build ${{ steps.unityBuild.outputs.buildVersion }} (${{ matrix.targetPlatform }}) is now live. Release notes can be found at ${{ EVENT_PAYLOAD.html_url }}.'
