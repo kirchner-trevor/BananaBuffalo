@@ -5,6 +5,7 @@ on:
 jobs:
   build-game:
     runs-on: ubuntu-latest
+    environment: main
     strategy:
       matrix:
         include:
@@ -45,4 +46,4 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@0.3.2
         with:
-          args: 'Build ${{ steps.unityBuild.outputs.buildVersion }} (${{ matrix.targetPlatform }}) is now live. Release notes can be found at ${{ EVENT_PAYLOAD.html_url }}.'
+          args: 'Build ${{ steps.unityBuild.outputs.buildVersion }} (${{ matrix.targetPlatform }}) is now live.'
