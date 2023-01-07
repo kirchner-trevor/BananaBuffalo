@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa34f4e7f02c714387cb788a7c894dc, type: 3}
   m_Name: Level3
   m_EditorClassIdentifier: 
-  Level: 2
+  Level: 3
   Name: 
   MinBronzeScore: 100
   MinSilverScore: 150

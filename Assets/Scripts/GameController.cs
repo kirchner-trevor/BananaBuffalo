@@ -101,7 +101,7 @@ public class GameController : MonoBehaviour
     {
         State = GameStates.StartOfGame;
         Turn = 1;
-        Level = 0;
+        Level = 1;
         Score = 0;
         GameStartStarted?.Invoke();
         StateChanged?.Invoke(State.ToString());

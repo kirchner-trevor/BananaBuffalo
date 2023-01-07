@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level: 1
   Name: Trevor's Town
-  MinBronzeScore: 50
-  MinSilverScore: 100
-  MinGoldScore: 200
+  MinBronzeScore: 5
+  MinSilverScore: 10
+  MinGoldScore: 15
