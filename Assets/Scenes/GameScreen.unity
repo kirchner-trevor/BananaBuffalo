@@ -4550,6 +4550,7 @@ MonoBehaviour:
   State: 0
   Turn: 1
   LastTurnNumber: 28
+  Level: -1
   Score: 500
   GameStartStarted:
     m_PersistentCalls:
@@ -7405,6 +7406,21 @@ MonoBehaviour:
       - m_Target: {fileID: 6949783861867643825, guid: 2a66bd386b813a34ba5cd3af6ea869d7, type: 3}
         m_TargetAssemblyTypeName: DynamicAffector, Assembly-CSharp
         m_MethodName: Clear
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  PlantFullyGrown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 900528402}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: ChangeScore
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

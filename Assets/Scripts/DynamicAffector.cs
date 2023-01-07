@@ -8,4 +8,14 @@ public class DynamicAffector : MonoBehaviour
     {
         space.Clear();
     }
+
+    public void Show(Transform transform)
+    {
+        transform.gameObject.SetActive(true);
+    }
+
+    public void Hide(Transform transform)
+    {
+        transform.gameObject.SetActive(false);
+    }
 }
