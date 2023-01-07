@@ -20,6 +20,7 @@ public class PersistentAudio : MonoBehaviour
             audioSourceArray[sourceToggle].clip = clipToPlay;
             audioSourceArray[sourceToggle].PlayScheduled(nextStartTime);
             // Checks how long the Clip will last and updates the Next Start Time with a new value
+            //double duration = clipToPlay.length;
             double duration = (double)clipToPlay.samples / clipToPlay.frequency;
             nextStartTime = nextStartTime + duration;
             // Switches the toggle to use the other Audio Source next
