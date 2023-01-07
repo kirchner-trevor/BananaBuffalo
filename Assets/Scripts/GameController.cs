@@ -19,6 +19,16 @@ public class GameController : MonoBehaviour
 
     public UnityEvent<string> StateChanged;
 
+    public enum GameStates
+    {
+        StartOfGame = 0,
+        Swap = 1,
+        Grow = 2,
+        Harvest = 3,
+        Selection = 4,
+        EndOfGame = 5
+    }
+
     public void NextState()
     {
         switch(State)
@@ -77,15 +87,5 @@ public class GameController : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public enum GameStates
-    {
-        StartOfGame = 0,
-        Swap = 1,
-        Grow = 2,
-        Harvest = 3,
-        Selection = 4,
-        EndOfGame = 5
     }
 }
