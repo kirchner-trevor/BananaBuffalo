@@ -4635,7 +4635,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53, y: -266}
+  m_AnchoredPosition: {x: -34, y: -297.55}
   m_SizeDelta: {x: 800, y: 893.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &847683157
@@ -4676,6 +4676,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847683155}
   m_CullTransparentMesh: 1
+--- !u!1001 &875366666
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2606871294804386211, guid: 00c2b7ec607e415458e79c417fa4eeeb, type: 3}
+      propertyPath: m_Name
+      value: EternalRadio
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606871294804386221, guid: 00c2b7ec607e415458e79c417fa4eeeb, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606871294804386221, guid: 00c2b7ec607e415458e79c417fa4eeeb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 546.3962
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606871294804386221, guid: 00c2b7ec607e415458e79c417fa4eeeb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 265.3579
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606871294804386221, guid: 00c2b7ec607e415458e79c417fa4eeeb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.6961012
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606871294804386221, guid: 00c2b7ec607e415458e79c417fa4eeeb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606871294804386221, guid: 00c2b7ec607e415458e79c417fa4eeeb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606871294804386221, guid: 00c2b7ec607e415458e79c417fa4eeeb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606871294804386221, guid: 00c2b7ec607e415458e79c417fa4eeeb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606871294804386221, guid: 00c2b7ec607e415458e79c417fa4eeeb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606871294804386221, guid: 00c2b7ec607e415458e79c417fa4eeeb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606871294804386221, guid: 00c2b7ec607e415458e79c417fa4eeeb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 00c2b7ec607e415458e79c417fa4eeeb, type: 3}
 --- !u!1 &900528401
 GameObject:
   m_ObjectHideFlags: 0
@@ -4833,33 +4890,9 @@ MonoBehaviour:
   SelectionStarted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 900528402}
-        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: NextState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 4165911636007607814}
         m_TargetAssemblyTypeName: MoonPhaseController, Assembly-CSharp
         m_MethodName: NextState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 986180968}
-        m_TargetAssemblyTypeName: ChoiceController, Assembly-CSharp
-        m_MethodName: ClearChoices
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5133,6 +5166,33 @@ MonoBehaviour:
   Object1: {fileID: 0}
   Object2: {fileID: 0}
   Object3: {fileID: 0}
+  ChoiceChosen:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 986180968}
+        m_TargetAssemblyTypeName: ChoiceController, Assembly-CSharp
+        m_MethodName: ClearChoices
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 900528402}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: NextState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &986180969
 Transform:
   m_ObjectHideFlags: 0
@@ -6301,7 +6361,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: 73}
+  m_AnchoredPosition: {x: -50, y: 94}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1219987785

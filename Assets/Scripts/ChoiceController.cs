@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ChoiceController : MonoBehaviour
 {
@@ -15,46 +16,43 @@ public class ChoiceController : MonoBehaviour
     public GameObject Object2;
     public GameObject Object3;
 
+    public UnityEvent<GameAction> ChoiceChosen;
+
     public void GetNewChoices() 
     {
-    int Random1 = Random.Range(0, Choices.Length);
-    int Random2 = Random.Range(0, Choices.Length);
-    int Random3 = Random.Range(0, Choices.Length);
+        int Random1 = Random.Range(0, Choices.Length);
+        int Random2 = Random.Range(0, Choices.Length);
+        int Random3 = Random.Range(0, Choices.Length);
      
-    RandomChoice1 = Choices[Random1];
-    RandomChoice2 = Choices[Random2];
-    RandomChoice3 = Choices[Random3];
+        RandomChoice1 = Choices[Random1];
+        RandomChoice2 = Choices[Random2];
+        RandomChoice3 = Choices[Random3];
+
         PlaceChoices();
     }
+
     public void PlaceChoices()
     {
-        Object1 = Instantiate(RandomChoice1);
-            Object1.transform.SetParent(Space1, false);
-        Object2 = Instantiate(RandomChoice2);
-            Object2.transform.SetParent(Space2, false);
-        Object3 = Instantiate(RandomChoice3);
-            Object3.transform.SetParent(Space3, false);
+        Object1 = PlaceChoice(RandomChoice1, Space1);
+        Object2 = PlaceChoice(RandomChoice2, Space2);
+        Object3 = PlaceChoice(RandomChoice3, Space3);
     }
+
+    private GameObject PlaceChoice(GameObject prefab, Transform space)
+    {
+        GameObject object1 = Instantiate(prefab);
+        object1.transform.SetParent(space, false);
+        GameAction object1GameAction = object1.GetComponentInChildren<GameAction>();
+        object1GameAction.UseButton.onClick.AddListener(() => ChoiceChosen?.Invoke(object1GameAction));
+        return object1;
+    }
+
     public void ClearChoices()
     {
-    Destroy(Object1);
+        Destroy(Object1);
         Destroy(Object2);
         Destroy(Object3);
-    
     }
-
-    
-        
-
-
-       
-
-
-
-
-
-
-
 
     // Start is called before the first frame update
     void Start()
