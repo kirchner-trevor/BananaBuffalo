@@ -19,4 +19,5 @@ MonoBehaviour:
   - MinGrowthNeeded: 4
     Sprite: {fileID: 21300000, guid: f95f697d66d238446b1ab717def09945, type: 3}
   MaxGrowthNeeded: 28
+  MaxDiseaseTolerated: 28
   Relationships: []

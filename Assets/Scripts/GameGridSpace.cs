@@ -66,11 +66,11 @@ public class PlantData
 
     public bool IsFullyGrown()
     {
-        return Growth >= Plant.MaxGrowthNeeded;
+        return Plant != null && Growth >= Plant.MaxGrowthNeeded;
     }
 
     public bool IsFullyDiseased()
     {
-        return Disease >= Plant.MaxDiseaseTolerated;
+        return Plant != null && Disease >= Plant.MaxDiseaseTolerated;
     }
 }
