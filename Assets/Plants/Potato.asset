@@ -15,11 +15,11 @@ MonoBehaviour:
   Name: Potato
   GrowthStages:
   - MinGrowthNeeded: 0
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 74ce7c48fd713b1419d8be7582ae8ed5, type: 3}
   - MinGrowthNeeded: 3
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 74ce7c48fd713b1419d8be7582ae8ed5, type: 3}
   - MinGrowthNeeded: 7
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 74ce7c48fd713b1419d8be7582ae8ed5, type: 3}
   MaxGrowthNeeded: 10
   MaxDiseaseTolerated: 10
   Relationships:

@@ -15,11 +15,11 @@ MonoBehaviour:
   Name: Onion
   GrowthStages:
   - MinGrowthNeeded: 0
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: aa23ff06b584f2546aa1241584f18dee, type: 3}
   - MinGrowthNeeded: 1
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: aa23ff06b584f2546aa1241584f18dee, type: 3}
   - MinGrowthNeeded: 3
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: aa23ff06b584f2546aa1241584f18dee, type: 3}
   MaxGrowthNeeded: 7
   MaxDiseaseTolerated: 7
   Relationships:

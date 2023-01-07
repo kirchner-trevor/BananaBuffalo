@@ -7,7 +7,8 @@ using UnityEngine.Events;
 public class GameGridController : MonoBehaviour
 {
     public List<GameGridRow> Rows;
-
+    public List<PlantScriptableObject> AllPlants;
+    
     public GameGridSpace SwapStartSpace;
     public UnityEvent<GameGridSpace> SwapStarted;
     public UnityEvent<GameGridSpace> SwapTested;
@@ -199,6 +200,11 @@ public class GameGridController : MonoBehaviour
 
     public void AddPlantToEmptySpace(PlantScriptableObject plant)
     {
+        AddPlantToEmptySpaces(plant, 1);
+    }
+
+    public void AddPlantToEmptySpaces(PlantScriptableObject plant, int count)
+    {
         List<GameGridSpace> emptySpaces = new List<GameGridSpace>();
         for (int rowIndex = 0; rowIndex < Rows.Count; rowIndex++)
         {
@@ -214,14 +220,34 @@ public class GameGridController : MonoBehaviour
             }
         }
 
-        GameGridSpace emptySpace = emptySpaces.OrderBy(_ => Random.value).FirstOrDefault();
+        int remaining = count;
 
-        if (emptySpace != null)
+        while (remaining-- > 0)
         {
-            emptySpace.SetPlantData(new PlantData
+            GameGridSpace emptySpace = emptySpaces.OrderBy(_ => Random.value).FirstOrDefault();
+
+            if (emptySpace != null)
             {
-                Plant = plant
-            });
+                emptySpace.SetPlantData(new PlantData
+                {
+                    Plant = plant
+                });
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+
+    public void AddPlantsToGridRandomly()
+    {
+        int gridSpaces = Rows.Sum(_ => _.Columns.Count);
+        int spacesPerPlant = gridSpaces / AllPlants.Count;
+        foreach (PlantScriptableObject plant in AllPlants)
+        {
+            Debug.Log($"Adding {spacesPerPlant} {plant.Name} to grid.");
+            AddPlantToEmptySpaces(plant, spacesPerPlant);
         }
     }
 }
