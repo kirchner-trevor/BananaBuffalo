@@ -51,9 +51,9 @@ public class GameGridController : MonoBehaviour
             PlantData startPlantData = SwapStartSpace.PlantData;
             SwapStartSpace.SetPlantData(space.PlantData);
             space.SetPlantData(startPlantData);
-
+            Debug.Log("Swap Completed");
             SwapCompleted?.Invoke(SwapStartSpace);
-            SwapCompleted?.Invoke(space);
+            
 
             SwapStartSpace = null;
         }
