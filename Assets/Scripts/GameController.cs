@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     public GameStates State = GameStates.StartOfGame;
     public int Turn = 1;
     public int LastTurnNumber = 28;
+    public int Score = 0;
 
     public UnityEvent GameStartStarted;
     public UnityEvent SwapStarted;
@@ -58,6 +59,7 @@ public class GameController : MonoBehaviour
                 else
                 {
                     State = GameStates.EndOfGame;
+                    PersistState();
                     GameEndStarted?.Invoke();
                     StateChanged?.Invoke(State.ToString());
                 }
@@ -72,6 +74,12 @@ public class GameController : MonoBehaviour
                 Debug.LogError($"Invalid state transition. State = {State}");
                 break;
         }
+    }
+
+    private void PersistState()
+    {
+        // TODO: Actually track the player's score
+        PersistentData.Instance.SetScore(Random.Range(0, 500));
     }
 
     // Start is called before the first frame update
