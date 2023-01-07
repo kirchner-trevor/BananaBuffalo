@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class ChoiceController : MonoBehaviour
 {
-    public ArrayList[]
+    public GameObject[] Choices;
+    public void GetNewChoices() 
+    {
+    int Random1 = Random.Range(0, Choices.Length);
+    int Random2 = Random.Range(0, Choices.Length);
+    int Random3 = Random.Range(0, Choices.Length);
+
+    
+    
+    }
+
+
        
 
 
