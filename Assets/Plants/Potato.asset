@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77dfd6101381241428f2428ce7b430bf, type: 3}
+  m_Name: Potato
+  m_EditorClassIdentifier: 
+  Name: Potato
+  GrowthStages:
+  - MinGrowthNeeded: 0
+    Sprite: {fileID: 0}
+  - MinGrowthNeeded: 3
+    Sprite: {fileID: 0}
+  - MinGrowthNeeded: 7
+    Sprite: {fileID: 0}
+  MaxGrowthNeeded: 10
+  MaxDiseaseTolerated: 10
+  Relationships:
+  - GrowthChange: 0
+    DiseaseChange: 1
+    Plant: {fileID: 11400000, guid: 9d2f380c45d597a43b36411bcb88ba07, type: 2}
+  - GrowthChange: 1
+    DiseaseChange: 0
+    Plant: {fileID: 11400000, guid: b65a276c2580f954290ae8f768a83476, type: 2}
+  PointsForFullyGrown: 20
