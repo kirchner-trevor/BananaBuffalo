@@ -3792,6 +3792,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7795615912819260276, guid: a510a85ab1090634889e33addd0c160a, type: 3}
+      propertyPath: PlantData.Plant
+      value: 
+      objectReference: {fileID: 11400000, guid: b65a276c2580f954290ae8f768a83476, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a510a85ab1090634889e33addd0c160a, type: 3}
 --- !u!224 &783435926 stripped
@@ -8530,6 +8534,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7795615912819260276, guid: a510a85ab1090634889e33addd0c160a, type: 3}
+      propertyPath: PlantData.Plant
+      value: 
+      objectReference: {fileID: 11400000, guid: b65a276c2580f954290ae8f768a83476, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a510a85ab1090634889e33addd0c160a, type: 3}
 --- !u!224 &1943275308 stripped
@@ -10121,6 +10129,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7795615912819260276, guid: a510a85ab1090634889e33addd0c160a, type: 3}
+      propertyPath: PlantData.Plant
+      value: 
+      objectReference: {fileID: 11400000, guid: b65a276c2580f954290ae8f768a83476, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a510a85ab1090634889e33addd0c160a, type: 3}
 --- !u!224 &8357386346523789989 stripped
