@@ -7,6 +7,9 @@ public class GameGridSpace : MonoBehaviour
 {
     public Button Button;
 
+    public int Row;
+    public int Column;
+
     // Start is called before the first frame update
     void Start()
     {

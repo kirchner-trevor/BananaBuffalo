@@ -39,12 +39,19 @@ public class GameGridController : MonoBehaviour
     {
         if (SwapStartSpace != null)
         {
+            if (!IsAdjacent(SwapStartSpace, space))
+            {
+                CancelSwap();
+                return;
+            }
+
             State = GridState.None;
 
-            Vector3 startPosition = SwapStartSpace.transform.position;
-            SwapStartSpace.transform.position = space.transform.position;
+            // TODO: Change plant image instead of swapping colors
+            Color startColor = SwapStartSpace.Button.image.color;
+            SwapStartSpace.Button.image.color = space.Button.image.color;
 
-            space.transform.position = startPosition;
+            space.Button.image.color = startColor;
 
             SwapCompleted?.Invoke(SwapStartSpace);
             SwapCompleted?.Invoke(space);
@@ -70,16 +77,27 @@ public class GameGridController : MonoBehaviour
         SpaceHighlighted?.Invoke(space);
     }
 
+    private bool IsAdjacent(GameGridSpace space1, GameGridSpace space2)
+    {
+        return space1 != null && space2 != null && Mathf.Abs(space1.Row - space2.Row) + Mathf.Abs(space1.Column - space2.Column) <= 1;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        int rowIndex = 0;
         foreach (GameGridRow row in Rows)
         {
+            int columnIndex = 0;
             foreach (GameGridSpace space in row.Columns)
             {
                 GameGridSpace localSpace = space;
                 localSpace.Button.onClick.AddListener(() => SwapSpace(localSpace));
+                localSpace.Row = rowIndex;
+                localSpace.Column = columnIndex;
+                columnIndex++;
             }
+            rowIndex++;
         }
     }
 
