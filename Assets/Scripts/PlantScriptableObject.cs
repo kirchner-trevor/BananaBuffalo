@@ -11,6 +11,7 @@ public class PlantScriptableObject : ScriptableObject
     public int MaxGrowthNeeded;
     public int MaxDiseaseTolerated;
     public List<PlantRelationship> Relationships;
+    public int PointsForFullyGrown;
 
     // Start is called before the first frame update
     void Start()
