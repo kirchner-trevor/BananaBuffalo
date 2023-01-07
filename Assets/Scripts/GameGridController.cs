@@ -48,10 +48,9 @@ public class GameGridController : MonoBehaviour
             State = GridState.None;
 
             // TODO: Change plant image instead of swapping colors
-            Color startColor = SwapStartSpace.Button.image.color;
-            SwapStartSpace.Button.image.color = space.Button.image.color;
-
-            space.Button.image.color = startColor;
+            PlantData startPlantData = SwapStartSpace.PlantData;
+            SwapStartSpace.SetPlantData(space.PlantData);
+            space.SetPlantData(startPlantData);
 
             SwapCompleted?.Invoke(SwapStartSpace);
             SwapCompleted?.Invoke(space);
