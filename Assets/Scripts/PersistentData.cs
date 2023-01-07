@@ -20,11 +20,29 @@ public class PersistentData : MonoBehaviour
         }
     }
 
-    private int score;
-    public int Score { get { return Instance.score; } private set { Instance.score = value; } }
+    public int Score { get; private set; }
+
+    public int Level { get; private set; } = -1;
+
+    public Dictionary<int, int> LevelScore = new Dictionary<int, int>();
+
+    public void SetLevel(int level)
+    {
+        Level = level;
+
+        if (!LevelScore.ContainsKey(Level))
+        {
+            LevelScore[Level] = 0;
+        }
+    }
 
     public void SetScore(int score)
     {
         Score = score;
+
+        if (Level != -1)
+        {
+            LevelScore[Level] = Score;
+        }
     }
 }
