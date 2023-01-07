@@ -12,10 +12,6 @@ jobs:
         include:
           - targetPlatform: WebGL
             channel: webgl-beta
-          - targetPlatform: StandaloneWindows64
-            channel: win64-beta
-          - targetPlatform: StandaloneOSX
-            channel: osx-beta
     steps:
       - name: Set up butler
         uses: jdno/setup-butler@v1
