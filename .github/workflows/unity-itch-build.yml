@@ -1,8 +1,10 @@
 name: Build Game For Unity
 on: 
-  schedule:
-    - cron: "*/30 * * * *"
+  push:
   workflow_dispatch:
+concurrency:
+  group: unity_build_all
+  cancel-in-progress: true
 jobs:
   build-game:
     runs-on: ubuntu-latest
