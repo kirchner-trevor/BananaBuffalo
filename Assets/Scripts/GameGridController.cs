@@ -16,6 +16,7 @@ public class GameGridController : MonoBehaviour
     public UnityEvent<GameGridSpace> SpaceHighlighted;
 
     public UnityEvent<GameGridSpace> SpaceFullyGrown;
+    public UnityEvent<GameGridSpace> SpaceFullyDiseased;
 
     public enum GridState
     {
@@ -184,6 +185,11 @@ public class GameGridController : MonoBehaviour
                 if (space.PlantData.IsFullyGrown())
                 {
                     SpaceFullyGrown?.Invoke(space);
+                }
+
+                if (space.PlantData.IsFullyDiseased())
+                {
+                    SpaceFullyDiseased?.Invoke(space);
                 }
             }
         }

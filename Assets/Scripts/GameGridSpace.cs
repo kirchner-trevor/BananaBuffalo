@@ -68,4 +68,9 @@ public class PlantData
     {
         return Growth >= Plant.MaxGrowthNeeded;
     }
+
+    public bool IsFullyDiseased()
+    {
+        return Disease >= Plant.MaxDiseaseTolerated;
+    }
 }
