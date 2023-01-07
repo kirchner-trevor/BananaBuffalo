@@ -14,6 +14,8 @@ public class GameGridController : MonoBehaviour
     public UnityEvent<GameGridSpace> SwapCanceled;
     public UnityEvent<GameGridSpace> SpaceHighlighted;
 
+    public UnityEvent<GameGridSpace> SpaceFullyGrown;
+
     public enum GridState
     {
         None = 0,
@@ -125,6 +127,70 @@ public class GameGridController : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    public void AddGrowthAndDiseaseToAllSpaces()
+    {
+        for (int rowIndex = 0; rowIndex < Rows.Count; rowIndex++)
+        {
+            GameGridRow row = Rows[rowIndex];
+            for (int columnIndex = 0; columnIndex < row.Columns.Count; columnIndex++)
+            {
+                GameGridSpace space = row.Columns[columnIndex];
+
+                if (space == null || space.PlantData.Plant == null)
+                {
+                    continue;
+                }
+
+                // Base Growth
+                int growthAmount = 1;
+                int diseaseAmount = 0;
+
+                if (rowIndex > 0)
+                {
+                    // Top Neighbor
+                    growthAmount += space.PlantData.Plant.GetGrowthFrom(Rows[rowIndex - 1].Columns[columnIndex].PlantData.Plant);
+                    diseaseAmount += space.PlantData.Plant.GetDiseaseFrom(Rows[rowIndex - 1].Columns[columnIndex].PlantData.Plant);
+                }
+
+                if (rowIndex < Rows.Count - 1)
+                {
+                    // Top Bottom Neighbor
+                    growthAmount += space.PlantData.Plant.GetGrowthFrom(Rows[rowIndex + 1].Columns[columnIndex].PlantData.Plant);
+                    diseaseAmount += space.PlantData.Plant.GetDiseaseFrom(Rows[rowIndex + 1].Columns[columnIndex].PlantData.Plant);
+                }
+
+                if (columnIndex > 0)
+                {
+                    // Left Neighbor
+                    growthAmount += space.PlantData.Plant.GetGrowthFrom(Rows[rowIndex].Columns[columnIndex - 1].PlantData.Plant);
+                    diseaseAmount += space.PlantData.Plant.GetDiseaseFrom(Rows[rowIndex].Columns[columnIndex - 1].PlantData.Plant);
+                }
+
+                if (columnIndex < Rows.Count - 1)
+                {
+                    // Right Neighbor
+                    growthAmount += space.PlantData.Plant.GetGrowthFrom(Rows[rowIndex].Columns[columnIndex + 1].PlantData.Plant);
+                    diseaseAmount += space.PlantData.Plant.GetDiseaseFrom(Rows[rowIndex].Columns[columnIndex + 1].PlantData.Plant);
+                }
+
+                space.PlantData.Growth += growthAmount;
+                space.PlantData.Disease += diseaseAmount;
+
+                space.SetPlantData(space.PlantData);
+
+                if (space.PlantData.IsFullyGrown())
+                {
+                    SpaceFullyGrown?.Invoke(space);
+                }
+            }
+        }
+    }
+
+    public void AddWeedsToEmptySpaces(float count)
+    {
+
     }
 }
 

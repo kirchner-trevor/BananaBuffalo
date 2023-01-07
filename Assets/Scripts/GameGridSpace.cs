@@ -14,6 +14,11 @@ public class GameGridSpace : MonoBehaviour
 
     public PlantData PlantData;
 
+    public void Clear()
+    {
+        SetPlantData(new PlantData());
+    }
+
     public void SetPlantData(PlantData plant)
     {
         PlantData = plant;
@@ -58,4 +63,9 @@ public class PlantData
     public PlantScriptableObject Plant;
     public int Growth;
     public int Disease;
+
+    public bool IsFullyGrown()
+    {
+        return Growth >= Plant.MaxGrowthNeeded;
+    }
 }
