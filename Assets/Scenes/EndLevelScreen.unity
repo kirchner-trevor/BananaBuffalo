@@ -943,6 +943,7 @@ GameObject:
   - component: {fileID: 1369595062}
   - component: {fileID: 1369595061}
   - component: {fileID: 1369595060}
+  - component: {fileID: 1369595063}
   m_Layer: 5
   m_Name: Replay Button
   m_TagString: Untagged
@@ -1015,6 +1016,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1369595063}
+        m_TargetAssemblyTypeName: RefPersistentAudio, Assembly-CSharp
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 93c10b3014927e84385f5a5a35b0a5ad, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 5598118599314700184, guid: 59547e5d8d7a9964cb184a2af543cdce, type: 3}
         m_TargetAssemblyTypeName: TransitionController, Assembly-CSharp
         m_MethodName: GoToGame
@@ -1065,6 +1078,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369595058}
   m_CullTransparentMesh: 1
+--- !u!114 &1369595063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369595058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5f28fa125c39c4ab5d789de745d671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1411748968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,6 +1170,7 @@ GameObject:
   - component: {fileID: 1456116182}
   - component: {fileID: 1456116181}
   - component: {fileID: 1456116180}
+  - component: {fileID: 1456116183}
   m_Layer: 5
   m_Name: Continue Button
   m_TagString: Untagged
@@ -1217,6 +1243,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1456116183}
+        m_TargetAssemblyTypeName: RefPersistentAudio, Assembly-CSharp
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 93c10b3014927e84385f5a5a35b0a5ad, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 5598118599314700184, guid: 59547e5d8d7a9964cb184a2af543cdce, type: 3}
         m_TargetAssemblyTypeName: TransitionController, Assembly-CSharp
         m_MethodName: GoToLevelSelect
@@ -1267,6 +1305,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456116178}
   m_CullTransparentMesh: 1
+--- !u!114 &1456116183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456116178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5f28fa125c39c4ab5d789de745d671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1791609983
 GameObject:
   m_ObjectHideFlags: 0
