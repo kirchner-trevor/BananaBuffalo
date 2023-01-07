@@ -7,8 +7,7 @@ using UnityEngine.Events;
 
 public class MoonPhaseController : MonoBehaviour
 {
-    public int Phase = 1;
-    public int turn = 1;
+    public int turn = 0;
     public UnityEvent Phase1;
     public UnityEvent Phase2;
     public UnityEvent Phase3;
@@ -18,21 +17,46 @@ public class MoonPhaseController : MonoBehaviour
     public UnityEvent Phase7;
     public UnityEvent Phase8;
 
-    public UnityEvent<string> StateChanged;
 
-    public enum GameStates
+
+    public void NextState()
     {
-        Phase1 = 0,
-        Phase2 = 1,
-        Phase3 = 2,
-        Phase4 = 3,
-        Phase5 = 4,
-        Phase6 = 5,
-        Phase7 = 6,
-        Phase8 = 7
+        
+        if (turn == 0)
+        {
+            Phase1.Invoke();
+        }
+        else if (turn == 3)
+        {
+            Phase2.Invoke();
+        }
+        else if(turn == 6)
+        {
+            Phase3.Invoke();
+        }
+        else if (turn == 10)
+        {
+            Phase4.Invoke();
+        }
+        else if (turn == 14)
+        {
+            Phase5.Invoke();
+        }
+        else if (turn == 18)
+        {
+            Phase6.Invoke();
+        }
+        else if (turn == 22)
+        {
+            Phase7.Invoke();
+        }
+        else if (turn == 25)
+        {
+            Phase8.Invoke();
+        }
+        turn++;
 
     }
-
     // Start is called before the first frame update
     void Start()
     {

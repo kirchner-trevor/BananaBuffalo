@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77dfd6101381241428f2428ce7b430bf, type: 3}
-  m_Name: Apple
+  m_Name: Potato
   m_EditorClassIdentifier: 
-  Name: Apple
+  Name: Potato
   GrowthStages:
   - MinGrowthNeeded: 0
     Sprite: {fileID: 0}
