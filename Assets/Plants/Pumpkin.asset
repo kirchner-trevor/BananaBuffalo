@@ -15,11 +15,11 @@ MonoBehaviour:
   Name: Pumpkin
   GrowthStages:
   - MinGrowthNeeded: 0
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 3f68a74ba8f5ce44f8b199ec55ff7ab8, type: 3}
   - MinGrowthNeeded: 3
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 3f68a74ba8f5ce44f8b199ec55ff7ab8, type: 3}
   - MinGrowthNeeded: 6
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 3f68a74ba8f5ce44f8b199ec55ff7ab8, type: 3}
   MaxGrowthNeeded: 9
   MaxDiseaseTolerated: 9
   Relationships:

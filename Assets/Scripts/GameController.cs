@@ -77,6 +77,13 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void LoadLevel(int seed)
+    {
+        // TODO: Init state based on level loaded
+        Debug.Log($"Loading random seed {seed}.");
+        Random.InitState(seed);
+    }
+
     public void ChangeScore(int change)
     {
         Score += change;

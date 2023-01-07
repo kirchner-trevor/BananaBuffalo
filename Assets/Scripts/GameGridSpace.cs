@@ -30,6 +30,7 @@ public class GameGridSpace : MonoBehaviour
                 if (PlantData.Growth >= stage.MinGrowthNeeded)
                 {
                     PlantImage.sprite = stage.Sprite;
+                    PlantImage.color = new Color(1, 1, 1, 1f);
                 }
             }
 
@@ -40,6 +41,7 @@ public class GameGridSpace : MonoBehaviour
         {
             // Nothing here, just make it empty looking
             PlantImage.sprite = null;
+            PlantImage.color = new Color(1, 1, 1, 0.1f);
             DiseaseImage.enabled = false;
         }
     }

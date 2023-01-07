@@ -3895,7 +3895,7 @@ PrefabInstance:
     - target: {fileID: 7795615912819260276, guid: a510a85ab1090634889e33addd0c160a, type: 3}
       propertyPath: PlantData.Plant
       value: 
-      objectReference: {fileID: 11400000, guid: b65a276c2580f954290ae8f768a83476, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a510a85ab1090634889e33addd0c160a, type: 3}
 --- !u!224 &783435926 stripped
@@ -4600,6 +4600,30 @@ MonoBehaviour:
   GameStartStarted:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 900528402}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 123456
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1446430318}
+        m_TargetAssemblyTypeName: GameGridController, Assembly-CSharp
+        m_MethodName: AddPlantsToGridRandomly
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 900528402}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: NextState
@@ -7465,6 +7489,14 @@ MonoBehaviour:
     - {fileID: 2029699709}
     - {fileID: 2098003769}
     - {fileID: 759766487}
+  AllPlants:
+  - {fileID: 11400000, guid: 9d2f380c45d597a43b36411bcb88ba07, type: 2}
+  - {fileID: 11400000, guid: c0b1175e1cc56bc4b864d5ad91c80e7c, type: 2}
+  - {fileID: 11400000, guid: 4bbc680f3b1b2994185c7b5e971ff5c7, type: 2}
+  - {fileID: 11400000, guid: db2292f2d160218459cdd9a3b8c89856, type: 2}
+  - {fileID: 11400000, guid: 3e9ce9227e255504b8e5977ab6654506, type: 2}
+  - {fileID: 11400000, guid: b65a276c2580f954290ae8f768a83476, type: 2}
+  - {fileID: 11400000, guid: 6a2a01002c63f4343846fd0a09aedb01, type: 2}
   SwapStartSpace: {fileID: 0}
   SwapStarted:
     m_PersistentCalls:
@@ -9014,7 +9046,7 @@ PrefabInstance:
     - target: {fileID: 7795615912819260276, guid: a510a85ab1090634889e33addd0c160a, type: 3}
       propertyPath: PlantData.Plant
       value: 
-      objectReference: {fileID: 11400000, guid: b65a276c2580f954290ae8f768a83476, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a510a85ab1090634889e33addd0c160a, type: 3}
 --- !u!224 &1943275308 stripped
@@ -10571,7 +10603,7 @@ PrefabInstance:
     - target: {fileID: 7795615912819260276, guid: a510a85ab1090634889e33addd0c160a, type: 3}
       propertyPath: PlantData.Plant
       value: 
-      objectReference: {fileID: 11400000, guid: b65a276c2580f954290ae8f768a83476, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a510a85ab1090634889e33addd0c160a, type: 3}
 --- !u!224 &8357386346523789989 stripped
