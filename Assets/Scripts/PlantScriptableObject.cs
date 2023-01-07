@@ -9,6 +9,7 @@ public class PlantScriptableObject : ScriptableObject
     public string Name;
     public List<PlantGrowthStage> GrowthStages;
     public int MaxGrowthNeeded;
+    public int MaxDiseaseTolerated;
     public List<PlantRelationship> Relationships;
 
     // Start is called before the first frame update
