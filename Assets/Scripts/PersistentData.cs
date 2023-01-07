@@ -33,6 +33,7 @@ public class PersistentData : MonoBehaviour
         if (!LevelScore.ContainsKey(Level))
         {
             LevelScore[Level] = 0;
+            Debug.Log($"Persisted Score 0 for Level {Level}.");
         }
     }
 
@@ -43,6 +44,7 @@ public class PersistentData : MonoBehaviour
         if (Level != -1)
         {
             LevelScore[Level] = Score;
+            Debug.Log($"Persisted Score {Score} for Level {Level}.");
         }
     }
 }

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level: 2
   Name: 
-  MinBronzeScore: 100
-  MinSilverScore: 150
-  MinGoldScore: 200
+  MinBronzeScore: 5
+  MinSilverScore: 10
+  MinGoldScore: 15
