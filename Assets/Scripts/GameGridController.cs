@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -188,9 +189,32 @@ public class GameGridController : MonoBehaviour
         }
     }
 
-    public void AddWeedsToEmptySpaces(float count)
+    public void AddPlantToEmptySpace(PlantScriptableObject plant)
     {
+        List<GameGridSpace> emptySpaces = new List<GameGridSpace>();
+        for (int rowIndex = 0; rowIndex < Rows.Count; rowIndex++)
+        {
+            GameGridRow row = Rows[rowIndex];
+            for (int columnIndex = 0; columnIndex < row.Columns.Count; columnIndex++)
+            {
+                GameGridSpace space = row.Columns[columnIndex];
 
+                if (space == null || space.PlantData.Plant == null)
+                {
+                    emptySpaces.Add(space);
+                }
+            }
+        }
+
+        GameGridSpace emptySpace = emptySpaces.OrderBy(_ => Random.value).FirstOrDefault();
+
+        if (emptySpace != null)
+        {
+            emptySpace.SetPlantData(new PlantData
+            {
+                Plant = plant
+            });
+        }
     }
 }
 
