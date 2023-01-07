@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77dfd6101381241428f2428ce7b430bf, type: 3}
-  m_Name: Strawberry
+  m_Name: Pumpkin
   m_EditorClassIdentifier: 
-  Name: Strawberry
+  Name: Pumpkin
   GrowthStages:
   - MinGrowthNeeded: 0
-    Sprite: {fileID: 21300000, guid: 24cf210708c57674b894af3341b1738b, type: 3}
-  - MinGrowthNeeded: 1
-    Sprite: {fileID: 21300000, guid: 7835bec40f86c2c4fb3f91a6eb3b7034, type: 3}
+    Sprite: {fileID: 0}
   - MinGrowthNeeded: 3
-    Sprite: {fileID: 21300000, guid: daf2ab606d4db0d4f9ecf4c02137d2a8, type: 3}
-  MaxGrowthNeeded: 5
-  MaxDiseaseTolerated: 5
+    Sprite: {fileID: 0}
+  - MinGrowthNeeded: 6
+    Sprite: {fileID: 0}
+  MaxGrowthNeeded: 9
+  MaxDiseaseTolerated: 9
   Relationships:
   - GrowthChange: 1
     DiseaseChange: 0
-    Plant: {fileID: 11400000, guid: db2292f2d160218459cdd9a3b8c89856, type: 2}
+    Plant: {fileID: 11400000, guid: 4bbc680f3b1b2994185c7b5e971ff5c7, type: 2}
   - GrowthChange: 0
     DiseaseChange: 1
-    Plant: {fileID: 11400000, guid: 4bbc680f3b1b2994185c7b5e971ff5c7, type: 2}
-  PointsForFullyGrown: 5
+    Plant: {fileID: 11400000, guid: c0b1175e1cc56bc4b864d5ad91c80e7c, type: 2}
+  PointsForFullyGrown: 15
