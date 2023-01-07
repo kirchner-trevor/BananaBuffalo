@@ -534,6 +534,7 @@ GameObject:
   - component: {fileID: 634799969}
   - component: {fileID: 634799968}
   - component: {fileID: 634799967}
+  - component: {fileID: 634799970}
   m_Layer: 5
   m_Name: Pixel Perfect Camera
   m_TagString: Untagged
@@ -624,6 +625,14 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!81 &634799970
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634799966}
+  m_Enabled: 1
 --- !u!1 &659464491
 GameObject:
   m_ObjectHideFlags: 0
