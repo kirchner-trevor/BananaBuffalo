@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     public int LastTurnNumber = 28;
     public int Level = -1;
     public int Score = 0;
+      
 
     public UnityEvent GameStartStarted;
     public UnityEvent SwapStarted;
@@ -18,6 +19,7 @@ public class GameController : MonoBehaviour
     public UnityEvent HarvestStarted;
     public UnityEvent SelectionStarted;
     public UnityEvent GameEndStarted;
+    public UnityEvent<int> TurnChanged;
 
     public UnityEvent<string> StateChanged;
 
@@ -53,7 +55,9 @@ public class GameController : MonoBehaviour
             case GameStates.Harvest:
                 if (Turn < LastTurnNumber)
                 {
+                    
                     State = GameStates.Selection;
+                    PersistState();
                     SelectionStarted?.Invoke();
                     StateChanged?.Invoke(State.ToString());
                 }
@@ -67,6 +71,7 @@ public class GameController : MonoBehaviour
                 break;
             case GameStates.Selection:
                 Turn++;
+                TurnChanged?.Invoke(Turn);
                 State = GameStates.Swap;
                 SwapStarted?.Invoke();
                 StateChanged?.Invoke(State.ToString());
