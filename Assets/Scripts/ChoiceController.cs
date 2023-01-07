@@ -11,6 +11,10 @@ public class ChoiceController : MonoBehaviour
     public Transform Space1;
     public Transform Space2;
     public Transform Space3;
+    public GameObject Object1;
+    public GameObject Object2;
+    public GameObject Object3;
+
     public void GetNewChoices() 
     {
     int Random1 = Random.Range(0, Choices.Length);
@@ -24,12 +28,21 @@ public class ChoiceController : MonoBehaviour
     }
     public void PlaceChoices()
     {
-        Instantiate(RandomChoice1).transform.SetParent(Space1,false);
-
-        Instantiate(RandomChoice2).transform.SetParent(Space2, false); ;
-
-        Instantiate(RandomChoice3).transform.SetParent(Space3, false); ;
+        Object1 = Instantiate(RandomChoice1);
+            Object1.transform.SetParent(Space1, false);
+        Object2 = Instantiate(RandomChoice2);
+            Object2.transform.SetParent(Space2, false);
+        Object3 = Instantiate(RandomChoice3);
+            Object3.transform.SetParent(Space3, false);
     }
+    public void ClearChoices()
+    {
+    Destroy(Object1);
+        Destroy(Object2);
+        Destroy(Object3);
+    
+    }
+
     
         
 
