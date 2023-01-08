@@ -10,8 +10,16 @@ public class LevelScriptableObject : ScriptableObject
     public int MinBronzeScore;
     public int MinSilverScore;
     public int MinGoldScore;
-    public int Seed;
+    [SerializeField] private int seed;
     public Sprite Preview;
+
+    public int Seed
+    {
+        get
+        {
+            return seed == -1 ? Random.Range(100000, 999999) : seed;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()

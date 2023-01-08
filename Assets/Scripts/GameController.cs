@@ -89,6 +89,7 @@ public class GameController : MonoBehaviour
         if (PersistentData.Instance.LevelObject != null)
         {
             Random.InitState(PersistentData.Instance.LevelObject.Seed);
+            Debug.Log($"GameController - Loading Seed {PersistentData.Instance.LevelObject.Seed} For Level {PersistentData.Instance.LevelObject.Name}");
         }
         else
         {
