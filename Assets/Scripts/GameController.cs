@@ -9,7 +9,6 @@ public class GameController : MonoBehaviour
     public GameStates State = GameStates.StartOfGame;
     public int Turn = 1;
     public int LastTurnNumber = 28;
-    public int Level = -1;
     public int Score = 0;
       
 
@@ -57,9 +56,7 @@ public class GameController : MonoBehaviour
             case GameStates.Harvest:
                 if (Turn < LastTurnNumber)
                 {
-
                     State = GameStates.Selection;
-                    PersistState();
                     SelectionStarted?.Invoke();
                     StateChanged?.Invoke(State.ToString());
                 }
@@ -89,12 +86,22 @@ public class GameController : MonoBehaviour
     }
     public void LoadLevel()
     {
-        Random.InitState(PersistentData.Instance.LevelObject.Seed);
+        if (PersistentData.Instance.LevelObject != null)
+        {
+            Random.InitState(PersistentData.Instance.LevelObject.Seed);
+        }
+        else
+        {
+            Debug.LogWarning("GameController - Failed To Load Level - Loading 'Default' Level");
+            PersistentData.Instance.SetLevel(1);
+            Random.InitState(111111);
+        }
     }
 
     public void ChangeScore(int change)
     {
         Score += change;
+        PersistentData.Instance.SetLocalScore(Score);
         Debug.Log("Score: " + Score);
     }
 
@@ -103,13 +110,13 @@ public class GameController : MonoBehaviour
         Debug.Log("Plant: " + plant);
         Score += plant.PointsForFullyGrown;
         ScoreChanged?.Invoke(plant.PointsForFullyGrown);
+        PersistentData.Instance.SetLocalScore(Score);
         Debug.Log("Score: " + Score);
     }
 
     private void PersistState()
     {
-        PersistentData.Instance.SetLevel(Level);
-        PersistentData.Instance.SetScore(Score);
+        PersistentData.Instance.SetLevelScore(Score);
     }
 
     // Start is called before the first frame update
@@ -117,8 +124,8 @@ public class GameController : MonoBehaviour
     {
         State = GameStates.StartOfGame;
         Turn = 1;
-        Level = 1;
         Score = 0;
+        PersistentData.Instance.SetLocalScore(Score);
         GameStartStarted?.Invoke();
         StateChanged?.Invoke(State.ToString());
     }

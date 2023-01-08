@@ -56,12 +56,12 @@ public class PersistentData : MonoBehaviour
         }
     }
 
-    public void SetScore(int score)
+    public void SetLevelScore(int score)
     {
-        Instance._SetScore(score);
+        Instance._SetLevelScore(score);
     }
 
-    private void _SetScore(int score)
+    private void _SetLevelScore(int score)
     {
         Score = score;
 
@@ -70,5 +70,15 @@ public class PersistentData : MonoBehaviour
             LevelScore[Level] = Score;
             Debug.Log($"Persisted Score {Score} for Level {Level}.");
         }
+    }
+
+    public void SetLocalScore(int score)
+    {
+        Instance._SetLocalScore(score);
+    }
+
+    private void _SetLocalScore(int score)
+    {
+        Score = score;
     }
 }
