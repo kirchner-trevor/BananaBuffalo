@@ -1,20 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ScoreChangeController : MonoBehaviour
 {
     public Transform space;
     public GameObject scorePrefab;
     private GameObject scoreObject;
-    public void ShowScore() 
+    
+    public void ShowScore(int score) 
     {
+         
         scoreObject = Instantiate(scorePrefab);
+        scoreObject.GetComponentInChildren<TMPro.TMP_Text>().text = score.ToString();
+
         PlaceScore();
     }
     public void PlaceScore()
     {
+        float randSpot1 = Random.Range(0,500);
+        float randSpot2 = Random.Range(0, 1080);
+        Debug.Log(randSpot2 + "," + randSpot1);
+
         scoreObject.transform.SetParent(space, false);
+        scoreObject.transform.position = new Vector3(randSpot1, randSpot2);
         Debug.Log("Place Score");
     }
 
