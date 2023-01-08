@@ -179,7 +179,8 @@ public class GameGridController : MonoBehaviour
                     diseaseAmount += space.PlantData.Plant.GetDiseaseFrom(Rows[rowIndex].Columns[columnIndex + 1].PlantData.Plant);
                 }
 
-                space.PlantData.Growth += growthAmount;
+                // Cannot have negative growth
+                space.PlantData.Growth += Mathf.Clamp(growthAmount, 0, growthAmount);
                 space.PlantData.Disease += diseaseAmount;
 
                 space.SetPlantData(space.PlantData);
@@ -248,6 +249,81 @@ public class GameGridController : MonoBehaviour
         {
             Debug.Log($"Adding {spacesPerPlant} {plant.Name} to grid.");
             AddPlantToEmptySpaces(plant, spacesPerPlant);
+        }
+    }
+
+    public void RemoveWeedsNextToSpace(GameGridSpace space)
+    {
+        if (space.Row > 0)
+        {
+            // Top
+            RemoveWeedFromSpace(Rows[space.Row - 1].Columns[space.Column]);
+        }
+
+        if (space.Row < Rows.Count - 1)
+        {
+            // Bottom
+            RemoveWeedFromSpace(Rows[space.Row + 1].Columns[space.Column]);
+        }
+
+        if (space.Column > 0 )
+        {
+            // Left
+            RemoveWeedFromSpace(Rows[space.Row].Columns[space.Column - 1]);
+        }
+
+        if (space.Column < Rows[space.Row].Columns.Count - 1)
+        {
+            //Right
+            RemoveWeedFromSpace(Rows[space.Row].Columns[space.Column + 1]);
+        }
+    }
+
+    private void RemoveWeedFromSpace(GameGridSpace space)
+    {
+        if (space.PlantData.Plant != null && space.PlantData.Plant.Name == "Weed")
+        {
+            Debug.Log($"Removed Weed from {space.Row}x{space.Column}.");
+            space.Clear();
+        }
+    }
+
+    public void RemovePlants(PlantScriptableObject plant, int count)
+    {
+        ChangePlants(space => space != null && space.PlantData.Plant == plant, space => space.Clear(), count);
+    }
+
+    public void ChangePlants(System.Func<GameGridSpace, bool> condition, System.Action<GameGridSpace> action, int count)
+    {
+        List<GameGridSpace> plantSpaces = new List<GameGridSpace>();
+        for (int rowIndex = 0; rowIndex < Rows.Count; rowIndex++)
+        {
+            GameGridRow row = Rows[rowIndex];
+            for (int columnIndex = 0; columnIndex < row.Columns.Count; columnIndex++)
+            {
+                GameGridSpace space = row.Columns[columnIndex];
+
+                if (condition(space))
+                {
+                    plantSpaces.Add(space);
+                }
+            }
+        }
+
+        int remaining = count;
+
+        while (remaining-- > 0)
+        {
+            GameGridSpace plantSpace = plantSpaces.OrderBy(_ => Random.value).FirstOrDefault();
+
+            if (plantSpace != null)
+            {
+                action(plantSpace);
+            }
+            else
+            {
+                break;
+            }
         }
     }
 }
