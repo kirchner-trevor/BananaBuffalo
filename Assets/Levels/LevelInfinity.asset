@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afa34f4e7f02c714387cb788a7c894dc, type: 3}
-  m_Name: Level1
+  m_Name: LevelInfinity
   m_EditorClassIdentifier: 
-  Level: 1
-  Name: Trevor's Town
+  Level: 4
+  Name: Infinite Farm
   MinBronzeScore: 500
   MinSilverScore: 750
   MinGoldScore: 1000
-  seed: 123456
-  Preview: {fileID: 21300000, guid: f579c5434a3c8c44d94bdc44a01c6301, type: 3}
+  seed: -1
+  Preview: {fileID: 21300000, guid: 27cf237e8a46b744db7b067f96c8edae, type: 3}

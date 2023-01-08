@@ -226,6 +226,82 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6049580065067953827, guid: ee4c0cb7a8b70a0428bbf7b44a2b2a6f, type: 3}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 157194321}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 5598118599314700184, guid: 59547e5d8d7a9964cb184a2af543cdce, type: 3}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: GoToLevelInfo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PersistentData, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: RefPersistentAudio, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TransitionController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: ef395db552e1015408da13b2a5b7119f, type: 2}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 93c10b3014927e84385f5a5a35b0a5ad, type: 3}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: LevelScriptableObject, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069515152300231978, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7186391799366975653, guid: cca1685df3c04764c9789056f29f1836, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 33
@@ -245,6 +321,22 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6539977840744650587, guid: cca1685df3c04764c9789056f29f1836, type: 3}
   m_PrefabInstance: {fileID: 157194318}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &157194320 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6088664632634739998, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+  m_PrefabInstance: {fileID: 157194318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &157194321 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8980022479641112618, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+  m_PrefabInstance: {fileID: 157194318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5f28fa125c39c4ab5d789de745d671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &168861531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1174,6 +1266,8 @@ MonoBehaviour:
     LockInScene: {fileID: 1015413126}
   - Level: {fileID: 11400000, guid: 009feec5f1c0eeb44b72352393537017, type: 2}
     LockInScene: {fileID: 589447480}
+  - Level: {fileID: 11400000, guid: 009feec5f1c0eeb44b72352393537017, type: 2}
+    LockInScene: {fileID: 157194320}
   LockUnlocked:
     m_PersistentCalls:
       m_Calls:
