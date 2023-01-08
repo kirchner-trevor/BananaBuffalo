@@ -10,26 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77dfd6101381241428f2428ce7b430bf, type: 3}
-  m_Name: Corn
+  m_Name: Tomato
   m_EditorClassIdentifier: 
-  Name: Corn
+  Name: Tomato
   GrowthStages:
   - MinGrowthNeeded: 0
-    Sprite: {fileID: 21300000, guid: 5de55d2b1f2f2004a9d5589f85a7297a, type: 3}
-  - MinGrowthNeeded: 2
-    Sprite: {fileID: 21300000, guid: 1b94b51f418556542b481c8f89cfade4, type: 3}
-  - MinGrowthNeeded: 6
-    Sprite: {fileID: -992311012, guid: aafec0e0709cd2a42ae0ed8966f2ceb1, type: 3}
-  MaxGrowthNeeded: 8
-  MaxDiseaseTolerated: 8
+    Sprite: {fileID: 21300000, guid: 0b64a06e7d2a48d4d8a4b74fbd79b888, type: 3}
+  - MinGrowthNeeded: 1
+    Sprite: {fileID: 0}
+  - MinGrowthNeeded: 3
+    Sprite: {fileID: 0}
+  MaxGrowthNeeded: 5
+  MaxDiseaseTolerated: 5
   Relationships:
   - GrowthChange: 1
     DiseaseChange: 0
-    Plant: {fileID: 11400000, guid: 3e9ce9227e255504b8e5977ab6654506, type: 2}
+    Plant: {fileID: 11400000}
   - GrowthChange: 1
     DiseaseChange: 0
-    Plant: {fileID: 11400000, guid: 9d2f380c45d597a43b36411bcb88ba07, type: 2}
+    Plant: {fileID: 11400000, guid: b65a276c2580f954290ae8f768a83476, type: 2}
   - GrowthChange: -1
     DiseaseChange: 1
     Plant: {fileID: 11400000, guid: 6a2a01002c63f4343846fd0a09aedb01, type: 2}
-  PointsForFullyGrown: 12
+  PointsForFullyGrown: 1

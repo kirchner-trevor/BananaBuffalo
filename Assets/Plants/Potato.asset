@@ -25,10 +25,10 @@ MonoBehaviour:
   Relationships:
   - GrowthChange: 1
     DiseaseChange: 0
-    Plant: {fileID: 11400000, guid: 9d2f380c45d597a43b36411bcb88ba07, type: 2}
+    Plant: {fileID: 11400000}
   - GrowthChange: 1
     DiseaseChange: 0
-    Plant: {fileID: 11400000, guid: b65a276c2580f954290ae8f768a83476, type: 2}
+    Plant: {fileID: 11400000, guid: 4bbc680f3b1b2994185c7b5e971ff5c7, type: 2}
   - GrowthChange: -1
     DiseaseChange: 1
     Plant: {fileID: 11400000, guid: 6a2a01002c63f4343846fd0a09aedb01, type: 2}
