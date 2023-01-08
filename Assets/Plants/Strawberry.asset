@@ -26,7 +26,10 @@ MonoBehaviour:
   - GrowthChange: 1
     DiseaseChange: 0
     Plant: {fileID: 11400000, guid: db2292f2d160218459cdd9a3b8c89856, type: 2}
-  - GrowthChange: 0
-    DiseaseChange: 1
+  - GrowthChange: 1
+    DiseaseChange: 0
     Plant: {fileID: 11400000, guid: 4bbc680f3b1b2994185c7b5e971ff5c7, type: 2}
+  - GrowthChange: -1
+    DiseaseChange: 1
+    Plant: {fileID: 11400000, guid: 6a2a01002c63f4343846fd0a09aedb01, type: 2}
   PointsForFullyGrown: 5
