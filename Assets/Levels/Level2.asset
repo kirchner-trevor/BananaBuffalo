@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Level2
   m_EditorClassIdentifier: 
   Level: 2
-  Name: 
-  MinBronzeScore: 5
-  MinSilverScore: 10
-  MinGoldScore: 15
+  Name: Gow Grove
+  MinBronzeScore: 500
+  MinSilverScore: 750
+  MinGoldScore: 1000
+  Seed: 696969

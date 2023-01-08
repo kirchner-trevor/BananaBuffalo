@@ -10,6 +10,8 @@ public class LevelScriptableObject : ScriptableObject
     public int MinBronzeScore;
     public int MinSilverScore;
     public int MinGoldScore;
+    public int Seed;
+    public Sprite Preview;
 
     // Start is called before the first frame update
     void Start()

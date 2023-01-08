@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Level3
   m_EditorClassIdentifier: 
   Level: 3
-  Name: 
-  MinBronzeScore: 100
-  MinSilverScore: 150
-  MinGoldScore: 200
+  Name: The River Ryan
+  MinBronzeScore: 500
+  MinSilverScore: 750
+  MinGoldScore: 1000
+  Seed: 420420
