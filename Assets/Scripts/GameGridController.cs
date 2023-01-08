@@ -221,30 +221,34 @@ public class GameGridController : MonoBehaviour
             }
         }
 
+        Debug.LogWarning($"Empty Spaces: {string.Join(" ", emptySpaces.Select(_ => $"({_.Column},{_.Row})"))}");
+
+        Stack<GameGridSpace> randomlyOrderedspaces = new Stack<GameGridSpace>(emptySpaces.OrderBy(_ => Random.value));
+
         int remaining = count;
 
         while (remaining-- > 0)
         {
-            GameGridSpace emptySpace = emptySpaces.OrderBy(_ => Random.value).FirstOrDefault();
-
-            if (emptySpace != null)
+            if (randomlyOrderedspaces.TryPop(out GameGridSpace emptySpace))
             {
                 emptySpace.SetPlantData(new PlantData
                 {
                     Plant = plant
                 });
+                Debug.LogWarning($"Placed: {plant.Name} at {emptySpace.Column},{emptySpace.Row}");
             }
             else
             {
+                Debug.LogWarning($"No More Room To Place: {remaining + 1} {plant.Name} unplaced");
                 break;
             }
         }
     }
 
-    public void AddPlantsToGridRandomly()
+    public void AddPlantsToGridRandomly(int emptySpaces)
     {
         int gridSpaces = Rows.Sum(_ => _.Columns.Count);
-        int spacesPerPlant = gridSpaces / AllPlants.Count;
+        int spacesPerPlant = (gridSpaces - emptySpaces) / AllPlants.Count;
         foreach (PlantScriptableObject plant in AllPlants)
         {
             Debug.Log($"Adding {spacesPerPlant} {plant.Name} to grid.");
