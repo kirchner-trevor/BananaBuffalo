@@ -17,4 +17,21 @@ public class RefPersistentAudio : MonoBehaviour
             Debug.LogError($"Cannot find 'SoundEffectSource' to play clip {audioClip.name}.");
         }
     }
+
+    public void ChangeVolumeByMultiplier(float multiplier)
+    {
+        GameObject eternalRadio = GameObject.Find("EternalRadio");
+        if (eternalRadio != null)
+        {
+            AudioSource[] audioSources = eternalRadio.GetComponentsInChildren<AudioSource>();
+            foreach (AudioSource audioSource in audioSources)
+            {
+                audioSource.volume *= multiplier;
+            }
+        }
+        else
+        {
+            Debug.LogError($"Cannot find 'EternalRadio' to change volume.");
+        }
+    }
 }
