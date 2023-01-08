@@ -19,7 +19,8 @@ public class DeleteScoreUpdate : MonoBehaviour
     }
     IEnumerator SelfDestruct()
     {
-        yield return new WaitForSeconds(2f);
+        float randSeconds = Random.Range(0.5f, 2f);
+        yield return new WaitForSeconds(randSeconds);
         Destroy(gameObject);
     }
     // Update is called once per frame
