@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
     public UnityEvent HarvestStarted;
     public UnityEvent SelectionStarted;
     public UnityEvent GameEndStarted;
+    public UnityEvent Turn5;
     public UnityEvent<int> TurnChanged;
     public UnityEvent<int> ScoreChanged;
 
@@ -36,7 +37,7 @@ public class GameController : MonoBehaviour
 
     public void NextState()
     {
-        switch(State)
+        switch (State)
         {
             case GameStates.StartOfGame:
                 State = GameStates.Swap;
@@ -56,7 +57,7 @@ public class GameController : MonoBehaviour
             case GameStates.Harvest:
                 if (Turn < LastTurnNumber)
                 {
-                    
+
                     State = GameStates.Selection;
                     PersistState();
                     SelectionStarted?.Invoke();
@@ -81,8 +82,11 @@ public class GameController : MonoBehaviour
                 Debug.LogError($"Invalid state transition. State = {State}");
                 break;
         }
+        if (Turn == 24)
+        {
+            Turn5.Invoke();
+        }
     }
-
     public void LoadLevel(int seed)
     {
         // TODO: Init state based on level loaded
