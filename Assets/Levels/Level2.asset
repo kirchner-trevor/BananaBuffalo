@@ -18,3 +18,4 @@ MonoBehaviour:
   MinSilverScore: 750
   MinGoldScore: 1000
   Seed: 696969
+  Preview: {fileID: 21300000, guid: 9f5a647d9c21d2440ba934533225366d, type: 3}

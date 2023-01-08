@@ -221,8 +221,6 @@ public class GameGridController : MonoBehaviour
             }
         }
 
-        Debug.LogWarning($"Empty Spaces: {string.Join(" ", emptySpaces.Select(_ => $"({_.Column},{_.Row})"))}");
-
         Stack<GameGridSpace> randomlyOrderedspaces = new Stack<GameGridSpace>(emptySpaces.OrderBy(_ => Random.value));
 
         int remaining = count;
@@ -235,11 +233,9 @@ public class GameGridController : MonoBehaviour
                 {
                     Plant = plant
                 });
-                Debug.LogWarning($"Placed: {plant.Name} at {emptySpace.Column},{emptySpace.Row}");
             }
             else
             {
-                Debug.LogWarning($"No More Room To Place: {remaining + 1} {plant.Name} unplaced");
                 break;
             }
         }
