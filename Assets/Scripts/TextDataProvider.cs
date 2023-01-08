@@ -22,7 +22,10 @@ public class TextDataProvider : MonoBehaviour
             originalText = Text.text;
         }
 
-        lastText = originalText.Replace("<score>", PersistentData.Instance.Score.ToString());
+        lastText = originalText;
+        lastText = lastText.Replace("<score>", PersistentData.Instance.Score.ToString());
+        lastText = lastText.Replace("<level-score>", PersistentData.Instance.LevelScore[PersistentData.Instance.Level].ToString());
+        lastText = lastText.Replace("<level-name>", PersistentData.Instance.LevelObject.Name);
         lastText = lastText.Replace("<value>", Value);
 
         Text.text = lastText;

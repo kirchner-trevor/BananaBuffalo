@@ -87,11 +87,9 @@ public class GameController : MonoBehaviour
             Turn5.Invoke();
         }
     }
-    public void LoadLevel(int seed)
+    public void LoadLevel()
     {
-        // TODO: Init state based on level loaded
-        Debug.Log($"Loading random seed {seed}.");
-        Random.InitState(seed);
+        Random.InitState(PersistentData.Instance.LevelObject.Seed);
     }
 
     public void ChangeScore(int change)
