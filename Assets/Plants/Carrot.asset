@@ -18,10 +18,10 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: c99d1ba001d00484a9104039857ca580, type: 3}
   - MinGrowthNeeded: 2
     Sprite: {fileID: 21300000, guid: 842648198eba1b24dbf0b47274e737c6, type: 3}
-  - MinGrowthNeeded: 6
+  - MinGrowthNeeded: 5
     Sprite: {fileID: 21300000, guid: 99c581ce42cbc3741808ab8b0565039b, type: 3}
-  MaxGrowthNeeded: 8
-  MaxDiseaseTolerated: 8
+  MaxGrowthNeeded: 7
+  MaxDiseaseTolerated: 7
   Relationships:
   - GrowthChange: 1
     DiseaseChange: 0
@@ -32,4 +32,4 @@ MonoBehaviour:
   - GrowthChange: -1
     DiseaseChange: 1
     Plant: {fileID: 11400000, guid: 6a2a01002c63f4343846fd0a09aedb01, type: 2}
-  PointsForFullyGrown: 2
+  PointsForFullyGrown: 6

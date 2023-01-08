@@ -314,7 +314,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Broccoli
+  m_text: 'Broccoli
+
+    x4'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -349,7 +351,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -377,7 +379,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 31.445892, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -392,12 +394,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8345367486925747660, guid: 477e878d2af586a469df20bd29eee6c9, type: 3}
       propertyPath: Count
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8345367486925747660, guid: 477e878d2af586a469df20bd29eee6c9, type: 3}
       propertyPath: Plant
       value: 
-      objectReference: {fileID: 11400000, guid: 3e9ce9227e255504b8e5977ab6654506, type: 2}
+      objectReference: {fileID: 11400000, guid: 620474109a643fd46890b6c253e4dc28, type: 2}
     - target: {fileID: 8345367486925747661, guid: 477e878d2af586a469df20bd29eee6c9, type: 3}
       propertyPath: m_Name
       value: AddPlantToRandomSpaceAbility

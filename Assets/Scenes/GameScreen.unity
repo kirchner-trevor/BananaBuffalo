@@ -497,8 +497,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -195.41248, y: 62.040016}
-  m_SizeDelta: {x: 733.6, y: 50}
+  m_AnchoredPosition: {x: -221, y: -16}
+  m_SizeDelta: {x: 733.6, y: 266.0272}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &207460094
 MonoBehaviour:
@@ -555,7 +555,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -5034,18 +5034,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1446430318}
-        m_TargetAssemblyTypeName: GameGridController, Assembly-CSharp
-        m_MethodName: AddPlantToEmptySpace
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 6a2a01002c63f4343846fd0a09aedb01, type: 2}
-          m_ObjectArgumentAssemblyTypeName: PlantScriptableObject, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   SelectionStarted:
     m_PersistentCalls:
       m_Calls:
@@ -5172,7 +5160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -63.212418, y: 27.54}
+  m_AnchoredPosition: {x: -63.212, y: 27.54}
   m_SizeDelta: {x: 665.9249, y: 157.07997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &930780582
@@ -8663,7 +8651,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -843, y: 37}
+  m_AnchoredPosition: {x: -815, y: 27.54}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1682682232
@@ -11116,7 +11104,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -629, y: -2}
+  m_AnchoredPosition: {x: -594, y: -16}
   m_SizeDelta: {x: 1220.5, y: 306.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2146128413

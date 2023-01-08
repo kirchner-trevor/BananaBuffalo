@@ -148,7 +148,7 @@ public class GameGridController : MonoBehaviour
                 }
 
                 // Base Growth and Disease
-                int growthAmount = 1;
+                int growthAmount = 0;
                 int diseaseAmount = -1;
 
                 if (rowIndex > 0)
