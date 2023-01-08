@@ -26,7 +26,26 @@ public class PersistentData : MonoBehaviour
 
     public Dictionary<int, int> LevelScore = new Dictionary<int, int>();
 
+    public LevelScriptableObject LevelObject;
+
+    public void SetLevel(LevelScriptableObject level)
+    {
+        Instance._SetLevel(level);
+    }
+
+    private void _SetLevel(LevelScriptableObject level)
+    {
+        LevelObject = level;
+        SetLevel(level.Level);
+        Debug.Log($"PersistentData - Set Level - {level.Name}");
+    }
+
     public void SetLevel(int level)
+    {
+        Instance._SetLevel(level);
+    }
+
+    private void _SetLevel(int level)
     {
         Level = level;
 
@@ -38,6 +57,11 @@ public class PersistentData : MonoBehaviour
     }
 
     public void SetScore(int score)
+    {
+        Instance._SetScore(score);
+    }
+
+    private void _SetScore(int score)
     {
         Score = score;
 
