@@ -23,10 +23,13 @@ MonoBehaviour:
   MaxGrowthNeeded: 8
   MaxDiseaseTolerated: 8
   Relationships:
-  - GrowthChange: 0
-    DiseaseChange: 1
+  - GrowthChange: 1
+    DiseaseChange: 0
     Plant: {fileID: 11400000, guid: 3e9ce9227e255504b8e5977ab6654506, type: 2}
   - GrowthChange: 1
     DiseaseChange: 0
     Plant: {fileID: 11400000, guid: 9d2f380c45d597a43b36411bcb88ba07, type: 2}
+  - GrowthChange: -1
+    DiseaseChange: 1
+    Plant: {fileID: 11400000, guid: 6a2a01002c63f4343846fd0a09aedb01, type: 2}
   PointsForFullyGrown: 12
