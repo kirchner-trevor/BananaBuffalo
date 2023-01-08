@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &710039222939488822
+--- !u!1 &4822650181202713552
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6211192270125726575}
+  - component: {fileID: 7971923499121153087}
   m_Layer: 5
   m_Name: Abilities
   m_TagString: Untagged
@@ -16,19 +16,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!224 &6211192270125726575
+--- !u!224 &7971923499121153087
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 710039222939488822}
+  m_GameObject: {fileID: 4822650181202713552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1220332856773610766}
+  - {fileID: 8639872435282625841}
   m_Father: {fileID: 6569788387807998743}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46,10 +46,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6569788387807998743}
-  - component: {fileID: 3796014843320399274}
-  - component: {fileID: 7852185138450453358}
+  - component: {fileID: 1001481196714935429}
+  - component: {fileID: 6842300585549958318}
   m_Layer: 5
-  m_Name: Corn Choice
+  m_Name: Broccoli Choice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6569788387878170696}
-  - {fileID: 6211192270125726575}
+  - {fileID: 7971923499121153087}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -77,7 +77,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3796014843320399274
+--- !u!114 &1001481196714935429
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5f28fa125c39c4ab5d789de745d671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7852185138450453358
+--- !u!114 &6842300585549958318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5de55d2b1f2f2004a9d5589f85a7297a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b7bfbff88701a32429c2236fcd7c4085, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3796014843320399274}
+      - m_Target: {fileID: 1001481196714935429}
         m_TargetAssemblyTypeName: RefPersistentAudio, Assembly-CSharp
         m_MethodName: PlayOneShot
         m_Mode: 2
@@ -236,7 +236,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 710039222939488822}
+      - m_Target: {fileID: 4822650181202713552}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Corn
+  m_text: Broccoli
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -383,12 +383,12 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1001 &7151660987902802113
+--- !u!1001 &303515476287844606
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 6211192270125726575}
+    m_TransformParent: {fileID: 7971923499121153087}
     m_Modifications:
     - target: {fileID: 8345367486925747660, guid: 477e878d2af586a469df20bd29eee6c9, type: 3}
       propertyPath: Count
@@ -397,7 +397,7 @@ PrefabInstance:
     - target: {fileID: 8345367486925747660, guid: 477e878d2af586a469df20bd29eee6c9, type: 3}
       propertyPath: Plant
       value: 
-      objectReference: {fileID: 11400000, guid: c0b1175e1cc56bc4b864d5ad91c80e7c, type: 2}
+      objectReference: {fileID: 11400000, guid: 3e9ce9227e255504b8e5977ab6654506, type: 2}
     - target: {fileID: 8345367486925747661, guid: 477e878d2af586a469df20bd29eee6c9, type: 3}
       propertyPath: m_Name
       value: AddPlantToRandomSpaceAbility
@@ -448,8 +448,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 477e878d2af586a469df20bd29eee6c9, type: 3}
---- !u!4 &1220332856773610766 stripped
+--- !u!4 &8639872435282625841 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8345367486925747663, guid: 477e878d2af586a469df20bd29eee6c9, type: 3}
-  m_PrefabInstance: {fileID: 7151660987902802113}
+  m_PrefabInstance: {fileID: 303515476287844606}
   m_PrefabAsset: {fileID: 0}
