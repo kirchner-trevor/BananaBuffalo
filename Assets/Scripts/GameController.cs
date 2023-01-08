@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     public UnityEvent SelectionStarted;
     public UnityEvent GameEndStarted;
     public UnityEvent<int> TurnChanged;
+    public UnityEvent<int> ScoreChanged;
 
     public UnityEvent<string> StateChanged;
 
@@ -99,6 +100,7 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("Plant: " + plant);
         Score += plant.PointsForFullyGrown;
+        ScoreChanged?.Invoke(plant.PointsForFullyGrown);
         Debug.Log("Score: " + Score);
     }
 
