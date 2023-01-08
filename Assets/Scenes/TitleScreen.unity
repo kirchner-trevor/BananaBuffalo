@@ -1397,6 +1397,7 @@ GameObject:
   - component: {fileID: 570467710}
   - component: {fileID: 570467712}
   - component: {fileID: 570467711}
+  - component: {fileID: 570467713}
   m_Layer: 5
   m_Name: TitleCloud
   m_TagString: Untagged
@@ -1463,6 +1464,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570467709}
   m_CullTransparentMesh: 1
+--- !u!95 &570467713
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570467709}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 25ab42a69e3effd4b9a91de77435427e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &634799966
 GameObject:
   m_ObjectHideFlags: 0
