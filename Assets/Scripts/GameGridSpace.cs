@@ -7,7 +7,7 @@ public class GameGridSpace : MonoBehaviour
 {
     public Button Button;
     public Image PlantImage;
-    public Image DiseaseImage;
+    public Image[] DiseaseImages;
 
     public int Row;
     public int Column;
@@ -34,15 +34,31 @@ public class GameGridSpace : MonoBehaviour
                 }
             }
 
-            // TODO: Have multiple stages of disease instead of a boolean
-            DiseaseImage.enabled = PlantData.Disease > 4;
+            for (int i = 0; i < DiseaseImages.Length; i++)
+            {
+                DiseaseImages[i].gameObject.SetActive(false);
+            }
+
+            float diseasePerImage = PlantData.Plant.MaxDiseaseTolerated / (DiseaseImages.Length + 1);
+            for (int i = DiseaseImages.Length - 1; i >= 0; i--)
+            {
+                float totalDiseaseMin = Mathf.RoundToInt(diseasePerImage * (i + 1));
+                if (PlantData.Disease >= totalDiseaseMin)
+                {
+                    DiseaseImages[i].gameObject.SetActive(true);
+                    break;
+                }
+            }
         }
         else
         {
             // Nothing here, just make it empty looking
             PlantImage.sprite = null;
             PlantImage.color = new Color(1, 1, 1, 0.1f);
-            DiseaseImage.enabled = false;
+            for (int i = 0; i < DiseaseImages.Length; i++)
+            {
+                DiseaseImages[i].gameObject.SetActive(false);
+            }
         }
     }
 
