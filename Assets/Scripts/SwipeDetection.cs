@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
 
 public class SwipeDetection : MonoBehaviour
 {
@@ -31,6 +33,7 @@ public class SwipeDetection : MonoBehaviour
 
     private void OnEnable()
     {
+        TouchSimulation.Enable();
         inputManager.OnStartTouch += SwipeStart;
         inputManager.OnEndTouch += SwipeEnd;
     }
@@ -39,6 +42,7 @@ public class SwipeDetection : MonoBehaviour
     {
         inputManager.OnStartTouch -= SwipeStart;
         inputManager.OnEndTouch -= SwipeEnd;
+        TouchSimulation.Disable();
     }
 
     private void SwipeStart(Vector2 position, float time)
