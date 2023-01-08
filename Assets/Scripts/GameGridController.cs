@@ -287,6 +287,45 @@ public class GameGridController : MonoBehaviour
             space.Clear();
         }
     }
+
+    public void RemovePlants(PlantScriptableObject plant, int count)
+    {
+        ChangePlants(space => space != null && space.PlantData.Plant == plant, space => space.Clear(), count);
+    }
+
+    public void ChangePlants(System.Func<GameGridSpace, bool> condition, System.Action<GameGridSpace> action, int count)
+    {
+        List<GameGridSpace> plantSpaces = new List<GameGridSpace>();
+        for (int rowIndex = 0; rowIndex < Rows.Count; rowIndex++)
+        {
+            GameGridRow row = Rows[rowIndex];
+            for (int columnIndex = 0; columnIndex < row.Columns.Count; columnIndex++)
+            {
+                GameGridSpace space = row.Columns[columnIndex];
+
+                if (condition(space))
+                {
+                    plantSpaces.Add(space);
+                }
+            }
+        }
+
+        int remaining = count;
+
+        while (remaining-- > 0)
+        {
+            GameGridSpace plantSpace = plantSpaces.OrderBy(_ => Random.value).FirstOrDefault();
+
+            if (plantSpace != null)
+            {
+                action(plantSpace);
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
 }
 
 [System.Serializable]
