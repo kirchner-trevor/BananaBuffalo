@@ -63,9 +63,8 @@ public class GameController : MonoBehaviour
                 else
                 {
                     State = GameStates.EndOfGame;
-                    PersistState();
-                    GameEndStarted?.Invoke();
-                    StateChanged?.Invoke(State.ToString());
+                    StartCoroutine(DelayEnd());
+                    
                 }
                 break;
             case GameStates.Selection:
@@ -83,6 +82,14 @@ public class GameController : MonoBehaviour
         {
             Turn5.Invoke();
         }
+    }
+    IEnumerator DelayEnd()
+    {
+        yield return new WaitForSeconds(2f);
+        PersistState();
+        GameEndStarted?.Invoke();
+        StateChanged?.Invoke(State.ToString());
+
     }
     public void LoadLevel()
     {
