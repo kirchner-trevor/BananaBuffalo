@@ -179,7 +179,8 @@ public class GameGridController : MonoBehaviour
                     diseaseAmount += space.PlantData.Plant.GetDiseaseFrom(Rows[rowIndex].Columns[columnIndex + 1].PlantData.Plant);
                 }
 
-                space.PlantData.Growth += growthAmount;
+                // Cannot have negative growth
+                space.PlantData.Growth += Mathf.Clamp(growthAmount, 0, growthAmount);
                 space.PlantData.Disease += diseaseAmount;
 
                 space.SetPlantData(space.PlantData);
@@ -248,6 +249,42 @@ public class GameGridController : MonoBehaviour
         {
             Debug.Log($"Adding {spacesPerPlant} {plant.Name} to grid.");
             AddPlantToEmptySpaces(plant, spacesPerPlant);
+        }
+    }
+
+    public void RemoveWeedsNextToSpace(GameGridSpace space)
+    {
+        if (space.Row > 0)
+        {
+            // Top
+            RemoveWeedFromSpace(Rows[space.Row - 1].Columns[space.Column]);
+        }
+
+        if (space.Row < Rows.Count - 1)
+        {
+            // Bottom
+            RemoveWeedFromSpace(Rows[space.Row + 1].Columns[space.Column]);
+        }
+
+        if (space.Column > 0 )
+        {
+            // Left
+            RemoveWeedFromSpace(Rows[space.Row].Columns[space.Column - 1]);
+        }
+
+        if (space.Column < Rows[space.Row].Columns.Count - 1)
+        {
+            //Right
+            RemoveWeedFromSpace(Rows[space.Row].Columns[space.Column + 1]);
+        }
+    }
+
+    private void RemoveWeedFromSpace(GameGridSpace space)
+    {
+        if (space.PlantData.Plant != null && space.PlantData.Plant.Name == "Weed")
+        {
+            Debug.Log($"Removed Weed from {space.Row}x{space.Column}.");
+            space.Clear();
         }
     }
 }
