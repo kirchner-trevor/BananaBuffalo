@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: db1014afea590e845a23126feba375b3
+guid: dd17fbd721576184986ee62cce53e806
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -10,7 +10,8 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Plain Jane Bold
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: db1014afea590e845a23126feba375b3, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
