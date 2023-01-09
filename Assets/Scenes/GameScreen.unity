@@ -1632,7 +1632,7 @@ RectTransform:
   m_GameObject: {fileID: 207460092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.37499994, y: 0.65999997, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 916670314}
@@ -1640,7 +1640,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -286, y: 256}
+  m_AnchoredPosition: {x: -342, y: 197}
   m_SizeDelta: {x: 746.3, y: 266.0272}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &207460094
@@ -4136,11 +4136,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456391237}
   m_CullTransparentMesh: 1
---- !u!1 &465751240 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4165911636017247387, guid: 4007ec3b085045f4d84761156ba79edc, type: 3}
-  m_PrefabInstance: {fileID: 4165911636007607813}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &486356683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8572,33 +8567,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  Turn5:
+  Last5:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 465751240}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2092231489}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
+  Turn2:
+    m_PersistentCalls:
+      m_Calls: []
   TurnChanged:
     m_PersistentCalls:
       m_Calls:
