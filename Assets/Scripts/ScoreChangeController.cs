@@ -24,8 +24,8 @@ public class ScoreChangeController : MonoBehaviour
     }
     public void PlaceScore()
     {
-        float randSpot1 = Random.Range(0,500);
-        float randSpot2 = Random.Range(0, 1080);
+        float randSpot1 = Random.Range(400,900);
+        float randSpot2 = Random.Range(100,600);
         Debug.Log(randSpot2 + "," + randSpot1);
 
         scoreObject.transform.SetParent(space, false);

@@ -18,7 +18,8 @@ public class GameController : MonoBehaviour
     public UnityEvent HarvestStarted;
     public UnityEvent SelectionStarted;
     public UnityEvent GameEndStarted;
-    public UnityEvent Turn5;
+    public UnityEvent Last5; 
+    public UnityEvent Turn2;
     public UnityEvent<int> TurnChanged;
     public UnityEvent<int> ScoreChanged;
 
@@ -80,7 +81,11 @@ public class GameController : MonoBehaviour
         }
         if (Turn == 24)
         {
-            Turn5.Invoke();
+            Last5.Invoke();
+        }
+        if (Turn == 2)
+        {
+            Turn2.Invoke();
         }
     }
     IEnumerator DelayEnd()
