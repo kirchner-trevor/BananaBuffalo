@@ -70,8 +70,8 @@ public class GameController : MonoBehaviour
                 }
                 break;
             case GameStates.Selection:
-                TurnChangedTurnsRemaining?.Invoke(LastTurnNumber - Turn);
                 Turn++;
+                TurnChangedTurnsRemaining?.Invoke(LastTurnNumber - Turn);
                 TurnChanged?.Invoke(Turn);
                 State = GameStates.Swap;
                 SwapStarted?.Invoke();
