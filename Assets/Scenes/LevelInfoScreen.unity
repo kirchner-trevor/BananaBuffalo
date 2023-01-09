@@ -320,6 +320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6521459634349716778, guid: f8643938511bb5f46a7752559efe96d0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: GoToLevelSelect
+      objectReference: {fileID: 0}
     - target: {fileID: 6521459634349716779, guid: f8643938511bb5f46a7752559efe96d0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

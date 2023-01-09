@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +15,8 @@ public class PersistentData : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(this);
+            LoadFromDisk();
+            SaveToDisk();
         }
         else
         {
@@ -68,6 +72,7 @@ public class PersistentData : MonoBehaviour
         if (Level != -1)
         {
             LevelScore[Level] = Score;
+            SaveToDisk();
             Debug.Log($"Persisted Score {Score} for Level {Level}.");
         }
     }
@@ -81,4 +86,43 @@ public class PersistentData : MonoBehaviour
     {
         Score = score;
     }
+
+    private void SaveToDisk()
+    {
+        string data = JsonUtility.ToJson(new PersistedSaveData { LevelScore = Instance.LevelScore.Select(_ => new LevelScoreData { Level = _.Key, Score = _.Value }).ToArray() });
+        Debug.Log($"PersistentData - Saving Data To Disk - {data}");
+        File.WriteAllText(Path.Combine(Application.persistentDataPath, "save.json"), data);
+    }
+
+    private void LoadFromDisk()
+    {
+        if (File.Exists(Path.Combine(Application.persistentDataPath, "save.json")))
+        {
+            string data = File.ReadAllText(Path.Combine(Application.persistentDataPath, "save.json"));
+            Debug.Log($"PersistentData - Loading Data From Disk - {data}");
+            PersistedSaveData saveData = JsonUtility.FromJson<PersistedSaveData>(data);
+            if (saveData.LevelScore != null)
+            {
+                Instance.LevelScore = saveData.LevelScore.ToDictionary(_ => _.Level, _ => _.Score);
+            }
+        }
+        else
+        {
+            Debug.Log("No Save State Exists");
+        }
+    }
+}
+
+
+[System.Serializable]
+public class PersistedSaveData
+{
+    public LevelScoreData[] LevelScore;
+}
+
+[System.Serializable]
+public class LevelScoreData
+{
+    public int Level;
+    public int Score;
 }
