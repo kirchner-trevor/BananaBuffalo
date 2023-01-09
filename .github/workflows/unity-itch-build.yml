@@ -41,7 +41,7 @@ jobs:
           targetPlatform: ${{ matrix.targetPlatform }}
       - name: Publish game to itch.io
         run: |
-          butler push build tobiusthegrand/bananabuffalo:${{ matrix.channel }} --userversion ${{ steps.unityBuild.outputs.buildVersion }}
+          butler push build tobiusthegrand/hearty-harvest:${{ matrix.channel }} --userversion ${{ steps.unityBuild.outputs.buildVersion }}
         env:
           BUTLER_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
       - name: Discord notification
