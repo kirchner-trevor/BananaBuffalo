@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -692296219, guid: aafec0e0709cd2a42ae0ed8966f2ceb1, type: 3}
+    - target: {fileID: 951670303226957905, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: Level
+      value: 
+      objectReference: {fileID: 11400000, guid: ef395db552e1015408da13b2a5b7119f, type: 2}
     - target: {fileID: 1129328931293917182, guid: cca1685df3c04764c9789056f29f1836, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 112.6
@@ -585,6 +589,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 5252253a808028e4391fb9bb983806d0, type: 3}
+    - target: {fileID: 951670303226957905, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: Level
+      value: 
+      objectReference: {fileID: 11400000, guid: 009feec5f1c0eeb44b72352393537017, type: 2}
     - target: {fileID: 6305176023149820050, guid: cca1685df3c04764c9789056f29f1836, type: 3}
       propertyPath: m_text
       value: 3
@@ -913,6 +921,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -992311012, guid: aafec0e0709cd2a42ae0ed8966f2ceb1, type: 3}
+    - target: {fileID: 951670303226957905, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: Level
+      value: 
+      objectReference: {fileID: 11400000, guid: 88895b7159b89dd4d80e98d7023c7af3, type: 2}
     - target: {fileID: 6305176023149820050, guid: cca1685df3c04764c9789056f29f1836, type: 3}
       propertyPath: m_text
       value: '2 '
@@ -1995,6 +2007,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1791609987}
     m_Modifications:
+    - target: {fileID: 43892933282776943, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 951670303226957905, guid: cca1685df3c04764c9789056f29f1836, type: 3}
+      propertyPath: Level
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d625bacdc1d2fe47a664ab8e904dc11, type: 2}
     - target: {fileID: 6305176023149820050, guid: cca1685df3c04764c9789056f29f1836, type: 3}
       propertyPath: m_text
       value: '1 '

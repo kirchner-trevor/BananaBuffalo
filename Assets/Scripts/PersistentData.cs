@@ -17,6 +17,7 @@ public class PersistentData : MonoBehaviour
             DontDestroyOnLoad(this);
             LoadFromDisk();
             SaveToDisk();
+            FixHighScores();
         }
         else
         {
@@ -29,6 +30,7 @@ public class PersistentData : MonoBehaviour
     public int Level { get; private set; } = -1;
 
     public Dictionary<int, int> LevelScore = new Dictionary<int, int>();
+    public Dictionary<int, int> LevelHighScore = new Dictionary<int, int>();
 
     public LevelScriptableObject LevelObject;
 
@@ -71,6 +73,11 @@ public class PersistentData : MonoBehaviour
 
         if (Level != -1)
         {
+            if (Score > LevelScore[Level])
+            {
+                LevelHighScore[Level] = Score;
+                Debug.Log($"Updated HighScore {Score} for Level {Level}.");
+            }
             LevelScore[Level] = Score;
             SaveToDisk();
             Debug.Log($"Persisted Score {Score} for Level {Level}.");
@@ -87,9 +94,31 @@ public class PersistentData : MonoBehaviour
         Score = score;
     }
 
+    private void FixHighScores()
+    {
+        foreach (KeyValuePair<int, int> levelScore in Instance.LevelScore)
+        {
+            if (Instance.LevelHighScore.TryGetValue(levelScore.Key, out int levelHighScore))
+            {
+                if (levelScore.Value > levelHighScore)
+                {
+                    Instance.LevelHighScore[levelScore.Key] = levelScore.Value;
+                }
+            }
+            else
+            {
+                Instance.LevelHighScore[levelScore.Key] = levelScore.Value;
+            }
+        }
+    }
+
     private void SaveToDisk()
     {
-        string data = JsonUtility.ToJson(new PersistedSaveData { LevelScore = Instance.LevelScore.Select(_ => new LevelScoreData { Level = _.Key, Score = _.Value }).ToArray() });
+        string data = JsonUtility.ToJson(new PersistedSaveData
+        {
+            LevelScore = Instance.LevelScore.Select(_ => new LevelScoreData { Level = _.Key, Score = _.Value }).ToArray(),
+            LevelHighScore = Instance.LevelHighScore.Select(_ => new LevelScoreData { Level = _.Key, Score = _.Value }).ToArray()
+        });
         Debug.Log($"PersistentData - Saving Data To Disk - {data}");
         File.WriteAllText(Path.Combine(Application.persistentDataPath, "save.json"), data);
     }
@@ -105,6 +134,10 @@ public class PersistentData : MonoBehaviour
             {
                 Instance.LevelScore = saveData.LevelScore.ToDictionary(_ => _.Level, _ => _.Score);
             }
+            if (saveData.LevelHighScore != null)
+            {
+                Instance.LevelHighScore = saveData.LevelHighScore.ToDictionary(_ => _.Level, _ => _.Score);
+            }
         }
         else
         {
@@ -118,6 +151,7 @@ public class PersistentData : MonoBehaviour
 public class PersistedSaveData
 {
     public LevelScoreData[] LevelScore;
+    public LevelScoreData[] LevelHighScore;
 }
 
 [System.Serializable]

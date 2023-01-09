@@ -22,7 +22,7 @@ public class LevelSelectController : MonoBehaviour
             {
                 int previousLevelNumber = level.Level.Level - 1;
                 LevelMap previousLevel = AllLevels.Find(_ => _.Level.Level == previousLevelNumber);
-                int previousLevelScore = PersistentData.Instance.LevelScore.GetValueOrDefault(previousLevelNumber);
+                int previousLevelScore = PersistentData.Instance.LevelHighScore.GetValueOrDefault(previousLevelNumber);
                 Debug.Log($"Checking level {level.Level.Level} for unlock, player has {previousLevelScore} points in the previous level.");
                 if (previousLevelScore >= previousLevel.Level.MinBronzeScore)
                 {
