@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     public UnityEvent GameEndStarted;
     public UnityEvent Last5; 
     public UnityEvent Turn2;
+    public UnityEvent<int> TurnChangedTurnsRemaining;
     public UnityEvent<int> TurnChanged;
     public UnityEvent<int> ScoreChanged;
 
@@ -70,6 +71,7 @@ public class GameController : MonoBehaviour
                 break;
             case GameStates.Selection:
                 Turn++;
+                TurnChangedTurnsRemaining?.Invoke(LastTurnNumber - Turn);
                 TurnChanged?.Invoke(Turn);
                 State = GameStates.Swap;
                 SwapStarted?.Invoke();
