@@ -13,9 +13,19 @@ public class GameGridSpace : MonoBehaviour
     public int Column;
 
     public PlantData PlantData;
+    public PlantData LastPlantData;
+
+    public PlantData GetMostRecentPlantData()
+    {
+        return PlantData.Plant != null ? PlantData : LastPlantData;
+    }
 
     public void Clear()
     {
+        if (PlantData.Plant != null)
+        {
+            LastPlantData = PlantData;
+        }
         SetPlantData(new PlantData());
     }
 

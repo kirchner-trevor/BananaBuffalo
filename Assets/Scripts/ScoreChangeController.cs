@@ -1,36 +1,59 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class ScoreChangeController : MonoBehaviour
 {
-    public Transform space;
+    public RectTransform space;
     public GameObject scorePrefab;
     private GameObject scoreObject;
+
+    public GameObject heartPrefab;
+    private List<GameObject> heartObjects = new List<GameObject>();
     
     public void ShowScore(int score) 
     {
         StartCoroutine(ShowUp(score));
     }
+
+    public void ShowScore(GameGridSpace gameGridSpace)
+    {
+        StartCoroutine(ShowUp(gameGridSpace));
+    }
+
     IEnumerator ShowUp(int score)
     {
         float randTime = Random.Range(0f, 1f);
         yield return new WaitForSeconds(randTime);
-        scoreObject = Instantiate(scorePrefab);
-        scoreObject.GetComponentInChildren<TMPro.TMP_Text>().text = score.ToString();
+
+        for (int i = 0; i < Mathf.CeilToInt(score / 1f); i++)
+        {
+            heartObjects.Add(Instantiate(heartPrefab));
+        }
 
         PlaceScore();
     }
+
+    IEnumerator ShowUp(GameGridSpace gameGridSpace)
+    {
+        float randTime = Random.Range(0f, 0.5f);
+        yield return new WaitForSeconds(randTime);
+        scoreObject = Instantiate(scorePrefab);
+        scoreObject.GetComponentInChildren<TMPro.TMP_Text>().text = gameGridSpace.GetMostRecentPlantData().Plant.PointsForFullyGrown.ToString();
+        scoreObject.transform.SetParent(gameGridSpace.gameObject.transform, false);
+    }
+
     public void PlaceScore()
     {
-        float randSpot1 = Random.Range(400,900);
-        float randSpot2 = Random.Range(100,600);
-        Debug.Log(randSpot2 + "," + randSpot1);
+        foreach (GameObject heartObject in heartObjects)
+        {
+            float x = Random.Range(space.rect.width / -2f, space.rect.width / 2f);
+            float y = Random.Range(space.rect.height / -2f, space.rect.height / 2f);
 
-        scoreObject.transform.SetParent(space, false);
-        scoreObject.transform.position = new Vector3(randSpot1, randSpot2);
-        Debug.Log("Place Score");
+            heartObject.transform.SetParent(space, false);
+            heartObject.transform.localPosition = new Vector3(x, y);
+        }
+        heartObjects.Clear();
     }
 
     // Start is called before the first frame update
