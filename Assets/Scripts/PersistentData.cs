@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -16,7 +17,6 @@ public class PersistentData : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this);
             LoadFromDisk();
-            SaveToDisk();
             FixHighScores();
         }
         else
@@ -33,6 +33,7 @@ public class PersistentData : MonoBehaviour
     public Dictionary<int, int> LevelHighScore = new Dictionary<int, int>();
 
     public LevelScriptableObject LevelObject;
+    public DateTimeOffset SaveTime = DateTimeOffset.UtcNow;
 
     public void SetLevel(LevelScriptableObject level)
     {
@@ -114,20 +115,26 @@ public class PersistentData : MonoBehaviour
 
     private void SaveToDisk()
     {
+        Instance.SaveTime = DateTimeOffset.UtcNow;
         string data = JsonUtility.ToJson(new PersistedSaveData
         {
+            SaveTime = Instance.SaveTime.ToUnixTimeSeconds(),
             LevelScore = Instance.LevelScore.Select(_ => new LevelScoreData { Level = _.Key, Score = _.Value }).ToArray(),
             LevelHighScore = Instance.LevelHighScore.Select(_ => new LevelScoreData { Level = _.Key, Score = _.Value }).ToArray()
         });
         Debug.Log($"PersistentData - Saving Data To Disk - {data}");
-        File.WriteAllText(Path.Combine(Application.persistentDataPath, "save.json"), data);
+        if (!Directory.Exists(PersistentDataPath))
+        {
+            Directory.CreateDirectory(PersistentDataPath);
+        }
+        File.WriteAllText(Path.Combine(PersistentDataPath, "save.json"), data);
     }
 
     private void LoadFromDisk()
     {
-        if (File.Exists(Path.Combine(Application.persistentDataPath, "save.json")))
+        if (File.Exists(Path.Combine(PersistentDataPath, "save.json")))
         {
-            string data = File.ReadAllText(Path.Combine(Application.persistentDataPath, "save.json"));
+            string data = File.ReadAllText(Path.Combine(PersistentDataPath, "save.json"));
             Debug.Log($"PersistentData - Loading Data From Disk - {data}");
             PersistedSaveData saveData = JsonUtility.FromJson<PersistedSaveData>(data);
             if (saveData.LevelScore != null)
@@ -138,10 +145,22 @@ public class PersistentData : MonoBehaviour
             {
                 Instance.LevelHighScore = saveData.LevelHighScore.ToDictionary(_ => _.Level, _ => _.Score);
             }
+            if (saveData.SaveTime != 0)
+            {
+                Instance.SaveTime = DateTimeOffset.FromUnixTimeSeconds(saveData.SaveTime);
+            }
         }
         else
         {
             Debug.Log("No Save State Exists");
+        }
+    }
+
+    private string PersistentDataPath
+    {
+        get
+        {
+            return Application.platform == RuntimePlatform.WebGLPlayer ? "/idbfs/23356ba0-909e-11ed-a1eb-0242ac120002" : Application.persistentDataPath;
         }
     }
 }
@@ -150,6 +169,7 @@ public class PersistentData : MonoBehaviour
 [System.Serializable]
 public class PersistedSaveData
 {
+    public long SaveTime;
     public LevelScoreData[] LevelScore;
     public LevelScoreData[] LevelHighScore;
 }
